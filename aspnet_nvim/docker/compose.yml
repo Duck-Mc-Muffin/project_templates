@@ -1,0 +1,28 @@
+services:
+  myproject-service:
+    image: myproject_dev
+    build:
+      context: ./..
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 80:5229
+      - 443:7224
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=wild
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/aspnetapp.pfx
+    volumes:
+      # Source code
+      - type: bind
+        source: ./..
+        target: /source
+
+      # HTTPS for development
+      - type: bind 
+        source: ./../.steven/https
+        target: /root/.aspnet/https
+
+      # Git identity
+      - type: bind 
+        source: ${HOME}/.gitconfig
+        target: /root/.gitconfig

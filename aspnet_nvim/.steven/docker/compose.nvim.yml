@@ -1,0 +1,19 @@
+services:
+  myproject-service:
+    image: myproject_dev_nvim
+    build:
+      context: ./..
+      dockerfile: ./.steven/docker/dev.dockerfile
+    volumes:
+      # HTTPS for development
+      - type: bind 
+        source: ./../.steven/https
+        target: /root/.aspnet/https
+
+      # Nvim DATA and STATE directories (SHADA-Files, harpoon.json, etc.)
+      - type: bind 
+        source: ./../.steven/nvim/XDG_STATE_HOME
+        target: /root/.local/state/nvim
+      - type: bind 
+        source: ./../.steven/nvim/XDG_DATA_HOME
+        target: /root/.local/share/nvim
