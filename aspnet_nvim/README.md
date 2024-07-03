@@ -83,7 +83,7 @@ services:
 Restart the container, to create the volume. Then *switch into the container* and create a development certificate. The following command creates a self-signed certificate in the directory for wich we configured the volume:
 
 ```bash
-dev-certs https -ep ${HOME}/.aspnet/https/aspnetapp.pfx -p <password_for_dev_certificate>
+dotnet dev-certs https -ep ${HOME}/.aspnet/https/aspnetapp.pfx -p <password_for_dev_certificate>
 ```
 
 The certificate is now installed and persists inside the container. The last step is to instruct the host system to trust the certificate e. g. import it into your browser:

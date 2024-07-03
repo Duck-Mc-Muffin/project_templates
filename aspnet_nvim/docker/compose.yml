@@ -5,8 +5,8 @@ services:
       context: ./..
       dockerfile: ./docker/Dockerfile
     ports:
-      - 80:5229
-      - 443:7224
+      - 80:<http_port>
+      - 443:<https_port>
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_Kestrel__Certificates__Default__Password=wild
