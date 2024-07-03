@@ -32,7 +32,7 @@ ln -s docker/compose.override.yml <personal_dir>/docker/compose.nvim.yml
 docker compose --project-directory docker up --build -d
 ```
 
-## Initializing a Project
+## Initializing a project
 You can create a project inside the container with the dotnet-cli:
 ```bash
 docker exec -it <project_container> /bin/bash
@@ -46,7 +46,7 @@ COPY *.csproj .
 RUN dotnet restore
 ```
 
-## ASP.NET - HTTPS With Redirect
+## ASP.NET - HTTPS with redirect
 
 ### Installing the certificate
 
@@ -129,7 +129,7 @@ builder.Services.AddHttpsRedirection(options =>
 
 ```
 
-## Additional Info and Tipps
+## Additional info and tipps
 
 The "personal folder" will be excluded from version control by adding it in `.git/info/exclude`. This avoids polluting `.gitignore` with "personal" configuration.
 
