@@ -6,7 +6,10 @@ I will also describe how to extend that image with a working installation of [Ne
 
 I also included notes about configuring Kestrel for self-signed certificates to use HTTPS locally.
 
-All instances of `myproject` need to be replaced with an appropriate working title.
+All instances of `myproject` need to be replaced with an appropriate working title. Use `grep` to confirm:
+```bash
+grep --recursive myproject .
+```
 
 The folder `.steven/` is an example name for a personal folder and should be replaced. `.local/` is a good alternative, if it doesn't conflict with anything.
 
@@ -26,11 +29,13 @@ To include Neovim, the base image needs to be build first before building the ex
 docker build -f docker/Dockerfile -t myproject_dev .
 
 # Symlik to the override-file
-ln -s docker/compose.override.yml <personal_dir>/docker/compose.nvim.yml
+ln -s ../<personal_dir>/docker/compose.nvim.yml docker/compose.override.yml
 
 # Spin up containers as usual
 docker compose --project-directory docker up --build -d
 ```
+
+Building the extended image might take a few minutes, since neovim will be compiled from source code.
 
 ## Initializing a project
 You can create a project inside the container with the dotnet-cli:

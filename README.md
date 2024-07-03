@@ -21,4 +21,5 @@ mv tmp/aspnet_nvim homepage
 rmdir tmp
 
 cd homepage
+rm README.md
 ```
