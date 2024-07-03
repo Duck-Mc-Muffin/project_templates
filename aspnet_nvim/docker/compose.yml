@@ -23,6 +23,7 @@ services:
         target: /root/.aspnet/https
 
       # Git identity
+      # TODO: Not every git tool I use is present in the container. This should maybe be a seperate file.
       - type: bind 
         source: ${HOME}/.gitconfig
         target: /root/.gitconfig
