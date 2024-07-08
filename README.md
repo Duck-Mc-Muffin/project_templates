@@ -17,7 +17,7 @@ git checkout main
 rm -r .git
 
 cd ..
-mv tmp/aspnet_nvim/* homepage
+mv tmp/aspnet_nvim homepage
 rmdir tmp
 
 cd homepage
