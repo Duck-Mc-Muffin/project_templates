@@ -35,7 +35,7 @@ ln -s ../<personal_dir>/docker/compose.nvim.yml docker/compose.override.yml
 docker compose --project-directory docker up --build -d
 ```
 
-Building the extended image might take a few minutes, since neovim will be compiled from source code.
+Building the extended image might take a few minutes, since neovim will be compiled from source code. You might need to add your personal directory in `.dockerignore` if it causes problems. You can remove it, once the base image is build.
 
 ## Initializing a project
 You can create a project inside the container with the dotnet-cli:
@@ -139,7 +139,7 @@ builder.Services.AddHttpsRedirection(options =>
 The "personal folder" will be excluded from version control by adding it in `.git/info/exclude`. This avoids polluting `.gitignore` with "personal" configuration.
 
 Some Neovim plugins require you to provide directories to persist plugin specific state.
-In this case its handy to redirect this path into your personal folder inside the project, _if it exists_. Otherwise use a default directory.
+In this case its handy to redirect this path into your personal directory inside the project, _if it exists_. Otherwise use a default directory.
 
 I solved this by defining a helper function inside `init.lua`.
 ```lua
