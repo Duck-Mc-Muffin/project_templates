@@ -94,7 +94,7 @@ chrome://settings/certificates
 > TODO: I have not figured out yet, how to properly install a certificate in Linux. Just importing it into a browser does not remove the warning.
 ### Configure HTTP-redirect
 
-Here is an example for development in `Properties/launchSettings.json`. Make sure to use the right ports *and replace "localhost"* appropriatly. `0.0.0.0` accepts Requests form every IP-Address.
+Here is an example for development in `Properties/launchSettings.json`. Make sure to use the right ports *and replace "localhost"* appropriatly. `0.0.0.0` accepts requests from any IP-address.
 ```json
   ...
   "profiles": {
