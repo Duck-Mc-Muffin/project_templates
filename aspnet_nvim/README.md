@@ -18,7 +18,7 @@ The folder `.steven/` is an example name for a personal folder and should be rep
 
 ## Build
 
-The the following command would spin up the container without Neovim.
+The following command would spin up the container without Neovim.
 ```bash
 docker compose --project-directory docker up --build -d
 ```

@@ -1,0 +1,26 @@
+services:
+
+  php-webapp-service:
+    image: myproject
+    container_name: php-myproject
+    build:
+      context: ./..
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - type: bind
+        source: ./..
+        target: /var/www/html 
+
+  webserver-nginx-service:
+    image: nginx:1.27-alpine-slim
+    container_name: nginx-myproject
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: bind
+        source: ./../nginx/nginx.local.conf
+        target: /etc/nginx/conf.d/default.conf
+      - type: bind
+        source: ./..
+        target: /var/www/html 

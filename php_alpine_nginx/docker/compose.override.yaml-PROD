@@ -1,0 +1,23 @@
+services:
+
+  webserver-nginx-service:
+    volumes:
+      - type: bind
+        source: ../nginx/nginx.prod.conf
+        target: /etc/nginx/conf.d/default.conf
+    secrets:
+      - ssl_domain_certificate
+      - ssl_domain_private_key
+      - ssl_subdomain_certificate
+      - ssl_subdomain_private_key
+
+secrets:
+  ssl_domain_certificate:
+    file: /etc/letsencrypt/live/stevenpauls.de/fullchain.pem
+  ssl_domain_private_key:
+    file: /etc/letsencrypt/live/stevenpauls.de/privkey.pem
+  ssl_subdomain_certificate:
+    file: /etc/letsencrypt/live/stevenpauls.de-0001/fullchain.pem
+  ssl_subdomain_private_key:
+    file: /etc/letsencrypt/live/stevenpauls.de-0001/privkey.pem
+
