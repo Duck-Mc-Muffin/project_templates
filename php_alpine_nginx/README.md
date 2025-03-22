@@ -1,6 +1,6 @@
 # Alpine PHP + Nginx
 
-This project template uses Alpine images for [PHP-fpm (FastCGI)](https://hub.docker.com/_/php/tags?name=fpm-alpine) and [a Nginx slim variant](https://hub.docker.com/_/php/tags?name=fpm-alpine) (based on [this guide](https://betterstack.com/community/guides/scaling-php/php-docker-images/)).
+This project template uses Alpine images for [PHP-fpm (FastCGI)](https://hub.docker.com/_/php/tags?name=fpm-alpine) and [a Nginx slim variant](https://hub.docker.com/_/nginx/tags?name=alpine-slim) (based on [this guide](https://betterstack.com/community/guides/scaling-php/php-docker-images/)).
 No `composer` or any extensions are installed yet.
 
 All instances of `myproject` need to be replaced with an appropriate working title. Use `grep` to confirm:
